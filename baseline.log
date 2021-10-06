@@ -1,0 +1,424 @@
+Starting Dynare (version 4.7-beta2).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+WARNING: in the 'steady_state_model' block, variable 'y_obs' is not assigned a value
+WARNING: in the 'steady_state_model' block, variable 'pi_obs' is not assigned a value
+WARNING: in the 'steady_state_model' block, variable 'i_obs' is not assigned a value
+Found 27 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 2).
+Computing static model derivatives w.r.t. parameters (order 2).
+Computing dynamic model derivatives (order 2).
+Computing dynamic model derivatives w.r.t. parameters (order 2).
+Processing outputs ...
+done
+Preprocessing completed.
+
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : 0 : (1)Taylor rule
+Equation number 2 : 0 : 2
+Equation number 3 : 0 : (2)home Euler equation
+Equation number 4 : 0 : (3)home Euler equation
+Equation number 5 : 0 : (4)optimal wage decision
+Equation number 6 : 0 : (5)auxiliary h1
+Equation number 7 : 0 : (6)auxiliary h2
+Equation number 8 : 0 : (7)wage index
+Equation number 9 : 0 : (8)production technology
+Equation number 10 : 0 : (9)the price dispersion
+Equation number 11 : 0 : (10)the wage dispersion
+Equation number 12 : 0 : (11)the wage dispersion
+Equation number 13 : 0 : (12)inflatin evolution
+Equation number 14 : 0 : (13)optimal price decision
+Equation number 15 : 0 : (14)auxiliary variable x1
+Equation number 16 : 0 : (15) auxiliary variable x2
+Equation number 17 : 0 : (16)wage decision
+Equation number 18 : 0 : (17)resource constraint
+Equation number 19 : 0 : (18)technology shock
+Equation number 20 : 0 : (19)perference shock
+Equation number 21 : 0 : (20)money balance demand
+Equation number 22 : 0 : (21)Fisher equation
+Equation number 23 : 0 : (22)utility function
+Equation number 24 : 0 : (23)welfare function
+Equation number 25 : 0 : (24)Output observation equation
+Equation number 26 : 0 : (25)Inflation observation equation
+Equation number 27 : 0 : (26)interest rate observation equation
+
+
+
+STEADY-STATE RESULTS:
+
+lamb    		 1.79448
+c       		 0.56253
+y       		 0.56253
+n       		 0.383333
+i       		 1.00634
+r       		 1.00634
+m       		 4.18751
+pi      		 1
+pi_star 		 1
+x1      		 2.44425
+x2      		 2.9331
+mc      		 0.833333
+w       		 0.733735
+w_star  		 0.733735
+h1      		 1.30886
+h2      		 1.99875
+vp      		 1
+vw      		 1
+aleph   		 1
+nu      		 1
+a       		 1
+xi      		 1
+welfare 		 -260.596
+utility 		 -1.64175
+y_obs   		 0
+pi_obs  		 0
+i_obs   		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+          0.4009           0.4009                0
+             0.5              0.5                0
+             0.5              0.5                0
+             0.5              0.5                0
+          0.5015           0.4862           0.1227
+          0.5015           0.4862          -0.1227
+            0.66             0.66                0
+            0.66             0.66                0
+            0.66             0.66                0
+          0.7974           0.7974                0
+           1.006            1.006                0
+           1.167            1.166          0.06769
+           1.167            1.166         -0.06769
+           1.282            1.282                0
+           1.451            1.451                0
+           1.525            1.525                0
+           1.525            1.525                0
+       3.236e+17       -3.236e+17                0
+       1.014e+20        1.014e+20                0
+       2.903e+22       -2.903e+22                0
+
+
+There are 10 eigenvalue(s) larger than 1 in modulus 
+for 10 forward-looking variable(s)
+
+The rank condition is verified.
+
+MODEL_DIAGNOSTICS:  No obvious problems with this mod-file were detected.
+
+The steadystate file changed the values for the following parameters: 
+chi
+The derivatives of jacobian and steady-state will be computed numerically
+(re-set options_.analytic_derivation_mode= -2)
+
+======== Identification Analysis ========
+
+Testing prior mean
+  
+Note that differences in the criteria could be due to numerical settings,
+numerical errors or the method used to find problematic parameter sets.
+Settings:
+    Derivation mode for Jacobians:                         Numerical
+    Method to find problematic parameters:                 Nullspace and multicorrelation coefficients
+    Normalize Jacobians:                                   Yes
+    Tolerance level for rank computations:                 robust
+    Tolerance level for selecting nonzero columns:         1e-08
+    Tolerance level for selecting nonzero singular values: 1e-03
+
+REDUCED-FORM:
+    All parameters are identified in the Jacobian of steady state and reduced-form solution matrices (rank(Tau) is full with tol = robust).
+
+MINIMAL SYSTEM (KOMUNJER AND NG, 2011):
+    All parameters are identified in the Jacobian of steady state and minimal system (rank(Deltabar) is full with tol = robust).
+
+SPECTRUM (QU AND TKACHENKO, 2012):
+    All parameters are identified in the Jacobian of mean and spectrum (rank(Gbar) is full with tol = robust).
+
+MOMENTS (ISKREV, 2010):
+    All parameters are identified in the Jacobian of first two moments (rank(J) is full with tol = robust).
+
+
+Collinearity patterns with 1 parameter(s)
+Parameter       [ Expl. params   ]       cosn
+SE_e_i          [ phiy           ]      0.9307472
+SE_e_a          [ rhoa           ]      0.9934061
+SE_e_nu         [ rhonu          ]      0.9377453
+b               [ rhoi           ]      0.9198105
+eta             [ alphap         ]      0.9686517
+alphap          [ alphaw         ]      0.9861972
+alphaw          [ alphap         ]      0.9861972
+kappaw          [ alphaw         ]      0.9770580
+kappap          [ b              ]      0.8733875
+phii            [ phiy           ]      0.9968325
+phipi           [ rhoi           ]      0.9955263
+phiy            [ phii           ]      0.9968325
+rhoi            [ phipi          ]      0.9955263
+rhoa            [ SE_e_a         ]      0.9934061
+rhonu           [ SE_e_nu        ]      0.9377453
+
+Collinearity patterns with 2 parameter(s)
+Parameter       [ Expl. params                   ]       cosn
+SE_e_i          [ phiy            rhoi           ]      0.9954374
+SE_e_a          [ kappap          rhoa           ]      0.9985585
+SE_e_nu         [ b               rhonu          ]      0.9780313
+b               [ SE_e_i          phiy           ]      0.9841785
+eta             [ alphaw          kappaw         ]      0.9921895
+alphap          [ b               alphaw         ]      0.9955338
+alphaw          [ eta             kappaw         ]      0.9987288
+kappaw          [ alphaw          kappap         ]      0.9971587
+kappap          [ alphaw          kappaw         ]      0.9705100
+phii            [ phiy            rhonu          ]      0.9987199
+phipi           [ rhoi            rhonu          ]      0.9970662
+phiy            [ SE_e_i          rhoi           ]      0.9993233
+rhoi            [ SE_e_i          phiy           ]      0.9984632
+rhoa            [ SE_e_a          kappap         ]      0.9986306
+rhonu           [ SE_e_nu         b              ]      0.9683718
+
+Plotting advanced diagnostics
+
+
+==== Identification analysis completed ====
+
+
+You did not declare endogenous variables after the estimation/calib_smoother command.
+Initial value of the log posterior (or likelihood): 19.8314
+
+==========================================================
+   Change in the posterior covariance matrix = 0.21577.
+   Change in the posterior mean = 0.87141.
+   Current mode = -1108.5201
+   Mode improvement = 1088.6887
+   New value of jscale = 0.0094392
+==========================================================
+
+==========================================================
+   Change in the posterior covariance matrix = 0.41332.
+   Change in the posterior mean = 1.7971.
+   Current mode = -1151.2774
+   Mode improvement = 42.7574
+   New value of jscale = 0.3052
+==========================================================
+
+==========================================================
+   Change in the posterior covariance matrix = 0.20613.
+   Change in the posterior mean = 0.99643.
+   Current mode = -1157.5918
+   Mode improvement = 6.3143
+   New value of jscale = 0.48214
+==========================================================
+
+Optimal value of the scale parameter = 0.48214
+
+
+Final value of minus the log posterior (or likelihood):-1157.591769 
+
+MODE CHECK
+
+Fval obtained by the minimization routine (minus the posterior/likelihood)): -1157.591769
+
+RESULTS FROM POSTERIOR ESTIMATION
+parameters
+       prior mean     mode    s.d.  prior pstdev
+
+b          0.6000   0.6374  0.0651   beta 0.1500 
+eta        2.0000   1.7500  0.4913   gamm 0.5000 
+alphap     0.6600   0.5969  0.0384   beta 0.0500 
+alphaw     0.6600   0.5837  0.0485   beta 0.0500 
+kappaw     0.5000   0.5236  0.0977   beta 0.1000 
+kappap     0.5000   0.5624  0.0877   beta 0.1000 
+phii       0.4000   0.8608  0.0262   beta 0.1000 
+phipi      1.5000   1.2654  0.1545   gamm 0.1500 
+phiy       0.2500   0.2790  0.0420   gamm 0.0500 
+rhoi       0.5000   0.6865  0.0718   beta 0.1000 
+rhoa       0.5000   0.6679  0.0664   beta 0.1000 
+rhonu      0.5000   0.3810  0.0843   beta 0.1000 
+
+standard deviation of shocks
+       prior mean     mode    s.d.  prior pstdev
+
+e_i        0.0100   0.0017  0.0002   invg 0.1000 
+e_a        0.0100   0.0211  0.0063   invg 0.1000 
+e_nu       0.0100   0.0278  0.0051   invg 0.1000 
+
+
+Log data density [Laplace approximation] is 1117.300752.
+
+Estimation::mcmc: Multiple chains mode.
+Estimation::mcmc: Old mh-files successfully erased!
+Estimation::mcmc: Old metropolis.log file successfully erased!
+Estimation::mcmc: Creation of a new metropolis.log file.
+Estimation::mcmc: Searching for initial values...
+Estimation::mcmc: Initial values found!
+
+Estimation::mcmc: Write details about the MCMC... Ok!
+Estimation::mcmc: Details about the MCMC are available in baseline/metropolis\baseline_mh_history_0.mat
+
+
+Estimation::mcmc: Number of mh files: 2 per block.
+Estimation::mcmc: Total number of generated files: 4.
+Estimation::mcmc: Total number of iterations: 1000000.
+Estimation::mcmc: Current acceptance ratio per chain: 
+                                                       Chain  1: 31.6906%
+                                                       Chain  2: 31.6952%
+Estimation::mcmc: Total number of MH draws per chain: 1000000.
+Estimation::mcmc: Total number of generated MH files: 2.
+Estimation::mcmc: I'll use mh-files 1 to 2.
+Estimation::mcmc: In MH-file number 1 I'll start at line 500001.
+Estimation::mcmc: Finally I keep 500000 draws per chain.
+
+
+
+MCMC Inefficiency factors per block
+Parameter       Block 1     Block 2
+SE_e_i           70.788      71.983
+SE_e_a          150.395     255.602
+SE_e_nu         126.397     134.601
+b               117.622     112.913
+eta              73.232      68.946
+alphap          117.157     138.001
+alphaw           78.358      80.081
+kappaw           69.860      72.001
+kappap           76.135      83.810
+phii             70.096      71.565
+phipi            61.145      62.080
+phiy            135.650     137.353
+rhoi             66.943      70.188
+rhoa             75.137      84.929
+rhonu            61.261      60.825
+
+Estimation::mcmc::diagnostics: Univariate convergence diagnostic, Brooks and Gelman (1998):
+    Parameter 1...  Done! 
+    Parameter 2...  Done! 
+    Parameter 3...  Done! 
+    Parameter 4...  Done! 
+    Parameter 5...  Done! 
+    Parameter 6...  Done! 
+    Parameter 7...  Done! 
+    Parameter 8...  Done! 
+    Parameter 9...  Done! 
+    Parameter 10...  Done! 
+    Parameter 11...  Done! 
+    Parameter 12...  Done! 
+    Parameter 13...  Done! 
+    Parameter 14...  Done! 
+    Parameter 15...  Done! 
+
+Estimation::marginal density: I'm computing the posterior mean and covariance...  Done!
+Estimation::marginal density: I'm computing the posterior log marginal density (modified harmonic mean)... Done!
+
+
+ESTIMATION RESULTS
+
+Log data density is 1117.658386.
+
+parameters
+         prior mean   post. mean        90% HPD interval    prior       pstdev
+
+b             0.600       0.6403      0.5311      0.7495     beta       0.1500
+eta           2.000       1.8896      1.0692      2.6843     gamm       0.5000
+alphap        0.660       0.6115      0.5407      0.6802     beta       0.0500
+alphaw        0.660       0.5858      0.5012      0.6706     beta       0.0500
+kappaw        0.500       0.5215      0.3608      0.6828     beta       0.1000
+kappap        0.500       0.5715      0.4373      0.7068     beta       0.1000
+phii          0.400       0.8624      0.8216      0.9040     beta       0.1000
+phipi         1.500       1.2791      1.0608      1.4919     gamm       0.1500
+phiy          0.250       0.2851      0.1970      0.3700     gamm       0.0500
+rhoi          0.500       0.6715      0.5702      0.7763     beta       0.1000
+rhoa          0.500       0.6535      0.5500      0.7614     beta       0.1000
+rhonu         0.500       0.3897      0.2731      0.5069     beta       0.1000
+
+standard deviation of shocks
+         prior mean   post. mean        90% HPD interval    prior       pstdev
+
+e_i           0.010       0.0017      0.0014      0.0019     invg       0.1000
+e_a           0.010       0.0249      0.0142      0.0351     invg       0.1000
+e_nu          0.010       0.0296      0.0205      0.0381     invg       0.1000
+
+MODEL SUMMARY
+
+  Number of variables:         27
+  Number of stochastic shocks: 3
+  Number of state variables:   10
+  Number of jumpers:           10
+  Number of static variables:  10
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables         e_i       e_a      e_nu
+e_i          0.000003  0.000000  0.000000
+e_a          0.000000  0.000620  0.000000
+e_nu         0.000000  0.000000  0.000877
+
+POLICY AND TRANSITION FUNCTIONS
+                                   y               c               n               i               r              pi               w               m
+Constant                    0.562530        0.562530        0.383333        1.006340        1.006340        1.000000        0.733735        4.185169
+i(-1)                      -0.492558       -0.492558       -0.559419        0.783588        1.142913       -0.249559       -0.108377     -169.372118
+w(-1)                      -0.014319       -0.014319       -0.016263        0.024963       -0.155571        0.146582        0.771234       -5.121592
+vp(-1)                     -0.000359       -0.000359        0.234002        0.001421       -0.010218        0.008164        0.019557       -0.284495
+a(-1)                       0.015078        0.015078       -0.400417       -0.016763        0.090851       -0.100596        0.028717        3.518395
+xi(-1)                     -1.116409       -1.116409       -1.267952        0.471596        1.513695       -0.709924       -0.266369     -109.388428
+c(-1)                       0.560714        0.560714        0.636826        0.046917        0.012862        0.042671        0.002165      -10.462362
+pi(-1)                     -0.067029       -0.067029       -0.076128        0.083750       -0.137149        0.499300       -0.041154      -17.974513
+nu(-1)                      0.063401        0.063401        0.072007        0.005740       -0.002034        0.007280       -0.000132       -1.317440
+e_i                        -1.662630       -1.662630       -1.888318        0.702332        2.254294       -1.057265       -0.396694     -162.908428
+e_a                         0.023071        0.023071       -0.612686       -0.025650        0.139012       -0.153925        0.043941        5.383564
+e_nu                        0.162684        0.162684        0.184767        0.014728       -0.005220        0.018680       -0.000338       -3.380509
+
+
+MOMENTS OF SIMULATED VARIABLES
+VARIABLE              MEAN       STD. DEV.        VARIANCE        SKEWNESS        KURTOSIS
+y                 0.561760        0.009990        0.000100       -0.343983        0.183896
+c                 0.561760        0.009990        0.000100       -0.343983        0.183896
+n                 0.386496        0.021103        0.000445       -0.078148       -0.131298
+i                 1.007207        0.004275        0.000018        0.234993       -0.664042
+r                 1.006550        0.008815        0.000078       -0.037083       -0.311708
+pi                1.001024        0.008655        0.000075        0.001928       -0.537141
+w                 0.731917        0.006079        0.000037       -0.202191       -0.501640
+m                 3.998599        0.934085        0.872514       -0.238115       -0.655693
+
+
+CORRELATION OF SIMULATED VARIABLES
+VARIABLE         y       c       n       i       r      pi       w       m
+y           1.0000  1.0000  0.3276 -0.5116 -0.5979  0.2978  0.6207  0.5147
+c           1.0000  1.0000  0.3276 -0.5116 -0.5979  0.2978  0.6207  0.5147
+n           0.3276  0.3276  1.0000  0.2768 -0.6314  0.8828 -0.2319 -0.2639
+i          -0.5116 -0.5116  0.2768  1.0000  0.5087  0.1648 -0.8554 -0.9997
+r          -0.5979 -0.5979 -0.6314  0.5087  1.0000 -0.7508 -0.4016 -0.5246
+pi          0.2978  0.2978  0.8828  0.1648 -0.7508  1.0000 -0.1673 -0.1471
+w           0.6207  0.6207 -0.2319 -0.8554 -0.4016 -0.1673  1.0000  0.8502
+m           0.5147  0.5147 -0.2639 -0.9997 -0.5246 -0.1471  0.8502  1.0000
+
+
+AUTOCORRELATION OF SIMULATED VARIABLES
+VARIABLE         1       2       3       4       5
+y           0.8095  0.5547  0.3419  0.1983  0.1022
+c           0.8095  0.5547  0.3419  0.1983  0.1022
+n           0.6347  0.4224  0.2192  0.1296  0.1258
+i           0.8978  0.7036  0.4967  0.3291  0.2255
+r           0.7752  0.5597  0.3777  0.2656  0.2114
+pi          0.8573  0.6670  0.4849  0.3568  0.2732
+w           0.9566  0.8677  0.7557  0.6423  0.5386
+m           0.8933  0.6966  0.4895  0.3228  0.2215
+
+
+
+VARIANCE DECOMPOSITION SIMULATING ONE SHOCK AT A TIME (in percent)
+                   e_i               e_a              e_nu  Tot. lin. contr.
+y                54.51             21.30             38.00            113.80
+c                54.51             21.30             38.00            113.80
+n                15.76             70.88             10.98             97.62
+i                30.09             47.49             13.72             91.30
+r                71.32             24.10              4.64            100.06
+pi               37.85             55.40              1.18             94.43
+w                14.36             86.46              0.92            101.73
+m                31.97             45.83             13.74             91.54
+Note: numbers do not add up to 100 due to non-zero correlation of simulated shocks in small samples
+
+Total computing time : 1h30m03s
+Note: 3 warning(s) encountered in the preprocessor
