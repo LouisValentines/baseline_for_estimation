@@ -1,1 +1,377 @@
+- **1.Financial Intermediaries**
+
+*a.Balance sheet of banks*
+$$
+Q_t S_{jt}+R_{jt}=N_{jt}+D_{jt}
+$$
+where,$Q_t$ price of loans to non-financial firms,$S_{jt}$ loans to non-financial firms,$R_{jt}$ reserves ,$N_{jt}$ net wealth/equity ,$D_{jt}$ deposits.
+
+over time,banker's equity capital evolves as the difference between earnings on assets and interest payments on liabilities .
+$$
+N_{jt+1}=i_{t+1}^kQ_tS_{jt}+i_{t+1}^RR_{jt}-i_{t+1}^DD_{jt}
+$$
+suppose that： $\rho D_{jt} \le R_{jt}$, where $\rho$ is deposit-reserve rate,$0\le \rho \le1$.
+
+Then we have (maybe this one is appropriate) :
+$$
+N_{jt+1}=i_{t+1}^kQ_tS_{jt}-(i_{t+1}^D-\rho i_{t+1}^R)D_{jt}
+$$
+
+Let $SDF_t=\beta \Lambda_{t,t+\tau}$ be the stochastic discount factor the banker at $t$ applies to earnings at $t+\tau$.
+$$
+N_{jt+1}=i_{t+1}^kQ_tS_{jt}-(i_{t+1}^D-\rho i_{t+1}^R)D_{jt}+i_{t+1}^DN_{jt}-i_{t+1}^DN_{jt}
+$$
+
+If $\rho\ne1$, have $D_{jt}=\frac{1}{1-\rho}(Q_tS_{jt}-N_{jt})$,then:
+$$
+N_{jt+1}=[(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]Q_tS_{jt}+(i_{t+1}^D-\frac{1}{1-\rho})N_{jt}
+$$
+$i_{t+1}^k-i_{t+1}^D$ is loan-deposit spread,$i_{t+1}^k> i_{t+1}^D$ . $i_{t+1}^D- i_{t+1}^R$ is deposit-reserve spread,  $i_{t+1}^D> i_{t+1}^R$ .
+
+~~Or there is no restriction for $\rho=1$ ,then:~~
+$$
+N_{jt+1}=(i_{t+1}^k-i_{t+1}^D)Q_tS_{jt}-\rho(i_{t+1}^D-i_{t+1}^R)D_{jt}+i_{t+1}^DN_{jt}
+$$
+*b.banker's objective function*
+
+The banker's objective is to maximize expected terminal wealth, give by
+$$
+V_{jt}=\max_{}E_t \sum_{\tau=0}(1-\theta)\theta^{\tau}\beta^{\tau+1}\Lambda_{t,t+1+\tau}N_{jt+1+\tau}
+$$
+So  we have Bellman function:
+$$
+V_{jt}(S_{jt},N_{jt})=E_t \beta \Lambda_{t,t+1}\left\{ (1-\theta)N_{jt+1}+\theta \max_{} V_{jt+1}(S_{jt+1},N_{jt+1})\right\}
+$$
+At first, guess the solution to this value function is linear:
+$$
+V_{jt}(S_{jt},N_{jt})=\nu_{st}Q_{t}S_{jt}+\nu_{dt}N_{jt}
+$$
+*c.moral hazard problem*
+
+To motivate a limit on bankers ability to expand its assets infinitely by borrowing funds from huosehold, introduce the moral hazard problem: at the beginning of the period the banker can choose to divert the fraction $\omega$ of assets and transfer them back to his/her own family . The incentive constraint:
+$$
+V_{jt}(S_{jt},D_{jt})\ge\omega Q_tS_{jt}
+$$
+if this constraint binds, then assets the banker can acquire will depend positively on his/her equity capital:
+$$
+\nu_{st}Q_tS_{jt}+\nu_{nt}N_{jt}=\omega Q_tS_{jt}
+$$
+Let $x_{t,t+\tau}=\frac{Q_{t+\tau}S_{jt+\tau}}{Q_tS_{jt}}$ denotes gross growth rate on loans, $z_{t,t+\tau}=\frac{N_{jt+\tau}}{N_{jt}}$ indicates gross growth rate of equity. Where :
+$$
+\nu_{st}=\beta \Lambda_{t,t+1}E_t \left \{(1-\theta)[(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D-i_{t+1}^R) ]+\theta x_{t,t+1} \nu_{st+1}\right \}
+$$
+
+$$
+\nu_{nt}=\beta \Lambda_{t,t+1}\left\{ (1-\theta)(i_{t+1}^D-\frac{1}{1-\rho})+\theta z_{t,t+1} \nu_{nt+1} \right\}
+$$
+
+Then:
+$$
+Q_tS_{jt}=\frac{\nu_{nt}}{\omega-\nu_{st}}N_{jt}=\phi_tN_{jt}
+$$
+Where $\phi_t$ ratio of privately intermediated assets to equity ,which regards as leverage ratio. then we can express the evolution of banker's net worth as:
+$$
+N_{jt+1}=\left\{ [(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]\phi_t+(i_{t+1}^D-\frac{1}{1-\rho}) \right\} N_{jt}
+$$
+
+$$
+z_{t,t+1}=[(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]\phi_t+(i_{t+1}^D-\frac{1}{1-\rho})
+$$
+
+$$
+x_{t,t+1}=\frac{\phi_{t+1}}{\phi_t}z_{t,t+1}
+$$
+
+ suppose that all the $\phi_t$ do not depend on firm-specific factors. So we can sum all of individual demands to obtain:
+$$
+Q_tS_t=\phi_tN_t
+$$
+The banker's equity is the sum the net wealth of existing banker,$N_{ot}$ and the net wealth of entering banker$N_{nt}$ :
+$$
+N_t=N_{ot}+N_{nt}
+$$
+
+$$
+N_{ot}=\theta \left\{ [(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]\phi_t+(i_{t+1}^D-\frac{1}{1-\rho}) \right\} N_{t-1}
+$$
+
+newly entering bankers receive start up money from households, suppose that the startup money household gives its new bank  a transfer equal to a small friction of the value of assets that exiting bankers have intermediated in their final operating period. The total final period assets of exiting bankers at $t$ is $(1-\theta)Q_t S_{t-1}$ ,according each period the household transfers the fraction $\frac{\gamma}{1-\theta}$ of this value to its entering bankers. In aggregate,
+$$
+N_{nt}=\gamma Q_t S_{t-1}
+$$
+Then the equation of motion for $N_t$:
+$$
+N_t=\theta \left\{ [(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]\phi_t+(i_{t+1}^D-\frac{1}{1-\rho}) \right\} N_{t-1}+\gamma Q_t S_{t-1}
+$$
+
+
+- **2.households**
+
+*a.basic setting*
+
+Utility function of households :
+$$
+\max_{}E_t\sum_{\tau=0}\beta^{t+\tau}[ln(C_{t+\tau}-hC_{t-1+\tau})+V(M_{t+1+\tau})-\frac{\chi}{1+\psi}L_{t+\tau}^{1+\psi}]
+$$
+Where, $M_t$ denotes CBDC in here we suppose that only CBDC can provide liquidity for household.
+
+Budget constraint:
+$$
+P_tC_t+(D_{t+1}+B_{t+1})+M_{t+1}=W_tL_t+i_t^D(B_t+D_t)+i_t^RM_t+\Pi_t+T_t
+$$
+*b.optimzation problems*
+
+F.O.Cs of households:
+$$
+\frac{\partial L_t}{\partial C_t}=\frac{1}{C_t-hC_{t-1}}-E_t\frac{\beta h}{C_{t+1}-hC_t}-P_t\Lambda_t=0
+$$
+
+$$
+\frac{\partial L_t}{\partial L_t}=-\chi L_t^{\psi}+\Lambda_tW_t=0
+$$
+
+$$
+\frac{\partial L_t}{\partial D_{t+1}}=\frac{\partial L_t}{\partial B_{t+1}}=-\Lambda_t+\beta \Lambda_{t+1}i_{t+1}^D=0
+$$
+
+$$
+\frac{\partial L_t}{\partial M_{t+1}}=\frac{\partial V_t}{\partial M_{t+1}}-\Lambda_t+\beta \Lambda_{t+1}i_{t+1}^R=0
+$$
+
+From $\frac{\partial L_t}{\partial B_{t+1}}$ and $\frac{\partial L_t}{\partial M_{t+1}}$ we have:
+$$
+\frac{\partial V_t}{\partial F_{t+1}}/\Lambda_t-1+\frac{i_{t+1}^R}{i_{t+1}^D}=0
+$$
+let$\mu_t=\frac{\partial V_t}{\partial F_{t+1}}/\Lambda_t$ means liquidity premiums , and$\mu_t<1$ , so we have:
+$$
+i_{t+1}^R=(1-\mu_t)i_{t+1}^D
+$$
+It states that rates on deposits $i_{t+1}^D$ equal to rates on CBDC plus liquidity premiums $(i_{t+1}^D \ge i_{t+1}^R)$ .
+
+- **3.intermediate goods producer**
+
+*a.general setting*
+
+competive non-financial firms produce intermediate goods that are eventually sold to retail firms. At the end of period $t$ ,an intermediate goods producer aquires capital $K_{t+1}$ for use in production in subsequent period. After production in period $t+1$ ,the firm has option of selling the capital on the open market. intermediate firms issue claims $S_t$ to aquire the money to buy capital $K_{t+1}$ from bank , and prices each claim at the price of a unit of capital $Q_t$ .
+$$
+Q_tK_{t+1}=Q_tS_t
+$$
+Production function:
+$$
+Y_t(\tau)=A_tK_{t}^{\alpha}L_t(\tau)^{1-\alpha}
+$$
+At period $t+1$ capital stock is $K_{t+1}$ is the sum of current investment $I_t$ and the stock of underpreciated capital,$(1-\delta)K_t$ :
+$$
+K_{t+1}=\xi_{t}[1-f(\frac{I_t}{I_{t-1}})]I_t+(1-\delta)K_t
+$$
+Where , $\xi_{t+1}$ is realization shock to capital.
+
+b.optimzation problem for intermediate goods firms
+$$
+\max_{}E_t\sum_{\tau=0} \beta \Lambda_{t,t+\tau+1}\left\{ mc_{t+\tau}P_{t+\tau}Y_{t+\tau}+Q_{t+1+\tau}(1-\delta)K_{t+1+\tau}-W_{t+\tau}L_{t+\tau}-i_{t+1+\tau}^kQ_{t+\tau}K_{t+1+\tau} \right\}
+$$
+Subject to production function.
+
+then have:
+$$
+w_t=(1-\alpha)\frac{Y_t}{L_t}mc_t
+$$
+
+$$
+i_{t+1}^k=\frac{1}{Q_t}[\alpha \frac{mc_tP_tY_t}{K_{t+1}}+Q_{t+1}(1-\delta)]
+$$
+
+- **4.capital producers**
+
+Capital producers make new capital using input of final output and subject to adjustment costs.
+$$
+max_{}E_t\sum_{\tau=0}\beta \Lambda_{t,t+1+\tau}\left\{ q_{t+\tau}[1-f(\frac{I_{t+\tau}}{I_{t-1+\tau}})] -1 \right\}I_{t+\tau}
+$$
+From profit maximzation ,the price of capital goods is equal to the marginal cost of investment goods production :
+$$
+q_t[1-f(\frac{I_{t}}{I_{t-1}})-f^{'}(\frac{I_{t}}{I_{t-1}})\frac{I_{t}}{I_{t-1}}]+\beta E_t\Lambda_{t,t+1}q_{t+1}f^{'}(\frac{I_{t+1}}{I_{t}})(\frac{I_{t+1}}{I_{t}})^2=1
+$$
+Where $q_t=\frac{Q_t}{P_t}$
+
+- **5.retail firms**
+
+ final output composite
+$$
+Y_t=[\int_{\tau \in[0,1]}^{}Y_{t}(\tau)^{\frac{1-\epsilon}{\epsilon}}d\tau]^{\frac{\epsilon}{1-\epsilon}}
+$$
+Cost minimization problem:
+$$
+\max_{Y_t(\tau)} P_tY_t-\int_{\tau \in[0,1]}^{}P_t(\tau)Y_t(\tau)d\tau
+$$
+Subject to final output composite.
+
+Then we have demand function:
+$$
+Y_t(\tau)=(\frac{P_t(\tau)}{P_t})^{-\epsilon}Y_t
+$$
+from zero profit condition have:
+$$
+P_t=[\int_{\tau \in[0,1]}^{} P_t(\tau)^{1-\epsilon}d\tau]^{\frac{1}{1-\epsilon}}
+$$
+Calvo pricing: in each period $t$ ,only a fraction $1-\kappa$ of firms can reset their price .
+$$
+P_t=\left\{ \int_{\tau \in [0,1-\kappa]}^{}P_t(\tau)^{1-\epsilon}d\tau +\int_{\tau \in[1-\kappa,1]}^{}P_{t-1}^{1-\epsilon}d\tau \right\}^{\frac{1}{1-\epsilon}}
+$$
+So we have the motion of inflation:
+$$
+\pi_t^{1-\epsilon}=(1-\kappa)\pi_t^{*}+\kappa
+$$
+the problem of firm is :
+$$
+\max_{P_t(\tau)}E_t\sum_{s=0}(\beta \kappa)^{s} \Lambda_{t,t+1+s}\left\{ [\frac{P_t(\tau)}{P_{t+s}}-mc_{t+s}]Y_{t+s}(\tau) \right\}
+$$
+Subject to demand function. the F.O.C is:
+$$
+P_t(\tau)=\frac{\epsilon}{\epsilon-1}\frac{E_t\sum_{s=0}(\beta \kappa)^s \Lambda_{t,t+1+s} mc_{t+s}Y_{t+s}P_{t+s}^{\epsilon}}{E_t\sum_{s=0}(\beta \kappa)^s \Lambda_{t,t+1+s} Y_{t+s}P_{t+s}^{\epsilon-1}}
+$$
+
+- **6.resource constraint and policy**
+
+Aggregate production:
+$$
+Y_t=C_t+[1-f(\frac{I_t}{I_{t-1}})]I_t+G_t
+$$
+Fiscal constraint:
+$$
+T_t+Q_{t+1}B_{t+1}=i_t^DQ_tB_t+G_t
+$$
+Fiscal policy:
+$$
+\frac{g_t}{g}=(\frac{g_{t-1}}{g})^{\rho_g}(\frac{Y_t}{Y})^{-\rho_{gy}(1-\rho_g)}e^{\eta_t}
+$$
+Where $g_t=\frac{G_t}{P_tY_t}$ .
+
+Tax policy:
+$$
+\frac{\tau_{gt}}{\tau_g}=(\frac{\tau_{gt}}{\tau_g})^{\rho_{\tau}}(\frac{b_t}{b})^{\rho_{\tau_{g}}(1-\rho_{\tau})}e^{\eta_{\tau}}
+$$
+Where $\tau_{gt}=\frac{T_t}{P_tY_t}$ $b_t=\frac{Q_{t+1}B_{t+1}}{P_tY_t}$
+
+Monetary policy:
+$$
+i_t^R=(i_{t-1}^R)^{\rho_i}[(\frac{\pi_t}{\pi})^{\phi_i}(\frac{Y_t}{Y})^{\phi_y}]^{1-\rho_i}e^{\eta_i}
+$$
+
+- **7.model equations**
+
+$$
+\Lambda_t=\frac{1}{C_t-hC_{t-1}}-E_t\frac{\beta h}{C_{t+1}-hC_t}
+$$
+
+$$
+\chi L_t^{\psi}=\Lambda_tw_t, w_t=\frac{W_t}{P_t}
+$$
+
+$$
+\beta E_t \frac{\Lambda_{t+1}}{\Lambda_t}\frac{i_{t+1}^D}{\pi_{t+1}}=1
+$$
+
+$$
+\frac{\partial V_t}{\partial M_{t+1}}\frac{1}{\Lambda_t}+\beta E_t\frac{\Lambda_{t+1}}{\Lambda_t} \frac{i_{t+1}^R}{\pi_{t+1}}=1
+$$
+
+$$
+n_{nt}=\gamma q_t S_{t-1}
+$$
+
+$$
+n_{ot}\pi_t=\theta \left\{ [(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]\phi_t+(i_{t+1}^D-\frac{1}{1-\rho}) \right\} n_{t-1}
+$$
+
+$$
+n_t=n_{ot}+n_{nt}
+$$
+
+$$
+q_tS_t=\phi_tn_t
+$$
+
+$$
+x_{t,t+1}=\frac{\phi_{t+1}}{\phi_t}z_{t,t+1}
+$$
+
+$$
+z_{t,t+1}\pi_{t+1}=[(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D- i_{t+1}^R)]\phi_t+(i_{t+1}^D-\frac{1}{1-\rho})
+$$
+
+$$
+q_t[1-f(\frac{I_{t}}{I_{t-1}})-f^{'}(\frac{I_{t}}{I_{t-1}})\frac{I_{t}}{I_{t-1}}]+\beta E_t\Lambda_{t,t+1}q_{t+1}f^{'}(\frac{I_{t+1}}{I_{t}})(\frac{I_{t+1}}{I_{t}})^2=1
+$$
+
+$$
+\pi_t^{1-\epsilon}=(1-\kappa)\pi_t^{*}+\kappa
+$$
+
+$$
+K_{t+1}=\xi_{t}[1-f(\frac{I_t}{I_{t-1}})]I_t+(1-\delta)K_t
+$$
+
+$$
+w_t=(1-\alpha)\frac{Y_t}{L_t}mc_t
+$$
+
+$$
+i_{t+1}^k=\frac{1}{q_t}[\alpha \frac{mc_tY_t}{K_{t+1}}+q_{t+1}\pi_{t+1}(1-\delta)]
+$$
+
+$$
+\phi_t=\frac{\nu_{nt}}{\omega-\nu_{st}}
+$$
+
+$$
+\nu_{st}=\beta \Lambda_{t,t+1}E_t \left \{(1-\theta)[(i_{t+1}^k-i_{t+1}^D)-\frac{\rho}{1-\rho}(i_{t+1}^D-i_{t+1}^R) ]+\theta x_{t,t+1} \nu_{st+1}\right \}
+$$
+
+$$
+\nu_{nt}=\beta \Lambda_{t,t+1}\left\{ (1-\theta)(i_{t+1}^D-\frac{1}{1-\rho})+\theta z_{t,t+1} \nu_{nt+1} \right\}
+$$
+
+$$
+w_t=(1-\alpha)\frac{Y_t}{L_t}
+$$
+
+$$
+Y_t\Delta_t=A_tK_t^{\alpha}L_t^{1-\alpha}
+$$
+
+$$
+\Delta_t=(1-\epsilon)(\frac{\pi_t^*}{\pi_t})^{-\epsilon}+\epsilon\pi_t^{\epsilon}\Delta_{t-1}
+$$
+
+$$
+\pi_t^*=\frac{\epsilon}{\epsilon-1}\pi_t\frac{f_{1,t}}{f_{2,t}}
+$$
+
+$$
+f_{1,t}=Y_tmc_t\Lambda_{t,t+1}+\beta \kappa E_t\pi_{t+1}^{\epsilon}f_{1,t+1}
+$$
+
+$$
+f_{2,t}=Y_t\Lambda_{t,t+1}+\beta \kappa E_t\pi_{t+1}^{\epsilon-1}f_{2,t+1}
+$$
+
+$$
+Y_t=C_t+[1-f(\frac{I_t}{I_{t-1}})]I_t+G_t
+$$
+
+$$
+\tau_{gt}+b_{t+1}\pi_{t+1}\frac{Y_{t+1}}{Y_t}=i_t^Db_t+g_t
+$$
+
+$$
+\frac{g_t}{g}=(\frac{g_{t-1}}{g})^{\rho_g}(\frac{Y_t}{Y})^{-\rho_{gy}(1-\rho_g)}e^{\eta_{g,t}}
+$$
+
+$$
+\frac{\tau_{gt}}{\tau_g}=(\frac{\tau_{gt}}{\tau_g})^{\rho_{\tau}}(\frac{b_t}{b})^{\rho_{\tau_{g}}(1-\rho_{\tau})}e^{\eta_{\tau,t}}
+$$
+
+$$
+i_t^R=(i_{t-1}^R)^{\rho_i}[(\frac{\pi_t}{\pi})^{\phi_i}(\frac{Y_t}{Y})^{\phi_y}]^{1-\rho_i}e^{\eta_{i,t}}
+$$
 
